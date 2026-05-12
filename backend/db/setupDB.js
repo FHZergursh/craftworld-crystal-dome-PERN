@@ -22,7 +22,7 @@ export async function initSimpleProfileTable() { // contains less details, will 
         OC INT
       );
     `;
-    console.log('Finished creating table.');
+    console.log('Finished initialising DB.');
 
   } catch (err) {
     console.error('Connection failed.', err);
