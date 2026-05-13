@@ -22,9 +22,12 @@ export async function initSimpleProfileTable() { // contains less details, will 
         OC INT
       );
     `;
-    console.log('Finished creating table.');
+    console.log('Finished initialising DB.');
 
   } catch (err) {
     console.error('Connection failed.', err);
   }
 }
+
+
+//Gonna need a more detailed profile here at some point, but simple_profile is priority to start with.
