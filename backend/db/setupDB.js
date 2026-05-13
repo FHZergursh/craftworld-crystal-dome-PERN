@@ -28,3 +28,6 @@ export async function initSimpleProfileTable() { // contains less details, will 
     console.error('Connection failed.', err);
   }
 }
+
+
+//Gonna need a more detailed profile here at some point, but simple_profile is priority to start with.
