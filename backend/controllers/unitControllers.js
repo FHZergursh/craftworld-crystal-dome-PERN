@@ -61,16 +61,12 @@ export const updateUnit = async (req, res) => {
       SET name = $1, movement = $2, toughness = $3, save = $4, wounds = $5, leadership = $6, OC = $7 
       WHERE id = $8`, [name, movement, toughness, save, wounds, leadership, OC, id])
 
-
+      return res.status(200).json({success: true, data: unit})
 
   } catch (error) {
     console.log(error);
     return res.status(404).json({success: false, message:"Error caught in update, " + error})
   }
-
-
-  res.send("test API")
-
 }
 
 export const deleteUnit = async (req, res) => {
@@ -78,7 +74,8 @@ export const deleteUnit = async (req, res) => {
     const {id} = req.params
 
     const deleted = await sql.query(`DELETE FROM simple_profile WHERE id = $1`, [id])
-    
+
+    return res.status(200).json({success: true, data: deleted})
   } catch (error) {
     console.log(error);
     return res.status(404).json({success: false, message:"Error caught in delete, " + error})
